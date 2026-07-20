@@ -26,6 +26,11 @@ class ForumForm
                     ->live(),
                 Toggle::make('nsfw')
                     ->required(),
+                Select::make('tags')
+                    ->label('Tags')
+                    ->relationship('tags', 'name')
+                    ->multiple()
+                    ->preload(),
 
                 Section::make('Connexion base de données phpBB')
                     ->visible(fn ($get) => $get('type') === 'phpbb')

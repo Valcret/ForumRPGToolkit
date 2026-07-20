@@ -8,6 +8,8 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 
 class ForumsTable
@@ -28,11 +30,19 @@ class ForumsTable
                         default => 'gray',
                     })
                     ->searchable(),
+                TextColumn::make('tags.name')
+                    ->label('Tags')
+                    ->badge(),
                 IconColumn::make('nsfw')
                     ->boolean(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('nsfw')
+                    ->label('NSFW'),
+                SelectFilter::make('tags')
+                    ->label('Tags')
+                    ->relationship('tags', 'name')
+                    ->multiple(),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -42,6 +52,7 @@ class ForumsTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('name');
     }
 }

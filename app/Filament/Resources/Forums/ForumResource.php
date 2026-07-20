@@ -3,17 +3,13 @@
 namespace App\Filament\Resources\Forums;
 
 use App\Filament\Resources\Forums\Pages;
+use App\Filament\Resources\Forums\Schemas\ForumForm;
+use App\Filament\Resources\Forums\Schemas\ForumInfolist;
+use App\Filament\Resources\Forums\Tables\ForumsTable;
 use App\Models\Forum;
-use App\Models\ForumTag;
-use Filament\Forms;
 use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Filament\Schemas\Schema;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+use Filament\Tables\Table;
 
 class ForumResource extends Resource
 {
@@ -25,79 +21,19 @@ class ForumResource extends Resource
     protected static ?string $pluralModelLabel = 'Forums';
     protected static ?int $navigationSort = 1;
 
-    public static function form(Schema $form): Schema
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->label('Nom du forum')
-                    ->required()
-                    ->maxLength(255),
+        return ForumForm::configure($schema);
+    }
 
-                Forms\Components\TextInput::make('alt')
-                    ->label('Lien Alt')
-                    ->url()
-                    ->maxLength(255)
-                    ->nullable(),
-
-                Forms\Components\Toggle::make('nsfw')
-                    ->label('NSFW')
-                    ->default(false),
-
-                Forms\Components\Select::make('tags')
-                    ->label('Tags')
-                    ->multiple()
-                    ->relationship('tags', 'name')
-                    ->preload()
-                    ->nullable(),
-            ]);
+    public static function infolist(Schema $schema): Schema
+    {
+        return ForumInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label('Nom')
-                    ->searchable()
-                    ->sortable(),
-
-                Tables\Columns\TextColumn::make('alt')
-                    ->label('Lien Alt')
-                    ->searchable(),
-
-                Tables\Columns\IconColumn::make('nsfw')
-                    ->label('NSFW')
-                    ->boolean(),
-
-                Tables\Columns\TextColumn::make('tags.name')
-                    ->label('Tags')
-                    ->badge(),
-
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Créé le')
-                    ->dateTime('d/m/Y')
-                    ->sortable(),
-            ])
-            ->filters([
-                Tables\Filters\TernaryFilter::make('nsfw')
-                    ->label('NSFW'),
-
-                Tables\Filters\SelectFilter::make('tags')
-                    ->label('Tags')
-                    ->relationship('tags', 'name')
-                    ->multiple(),
-            ])
-            ->actions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ])
-            ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ])
-            ->defaultSort('name');
+        return ForumsTable::configure($table);
     }
 
     public static function getPages(): array
@@ -105,6 +41,7 @@ class ForumResource extends Resource
         return [
             'index' => Pages\ListForums::route('/'),
             'create' => Pages\CreateForum::route('/create'),
+            'view' => Pages\ViewForum::route('/{record}'),
             'edit' => Pages\EditForum::route('/{record}/edit'),
         ];
     }
