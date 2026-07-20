@@ -23,11 +23,16 @@ class Roleplay extends Model
         'current_turn',
         'status_id',
         'archived_by',
+        'last_post_at',
+        'last_post_author',
+        'last_synced_at',
     ];
 
     protected $casts = [
-        'started' => 'date',
-        'ended'   => 'date',
+        'started'         => 'date',
+        'ended'           => 'date',
+        'last_post_at'    => 'datetime',
+        'last_synced_at'  => 'datetime',
     ];
 
     // Auteur
@@ -57,7 +62,7 @@ class Roleplay extends Model
     {
         return $this->belongsTo(RoleplayStatus::class, 'status_id');
     }
-// App/Models/Roleplay.php
+    // App/Models/Roleplay.php
     public function characters(): BelongsToMany
     {
         return $this->belongsToMany(Character::class, 'roleplay_characters')

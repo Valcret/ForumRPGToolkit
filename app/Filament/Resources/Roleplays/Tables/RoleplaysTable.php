@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Carbon;
 
 class RoleplaysTable
 {
@@ -15,7 +16,7 @@ class RoleplaysTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('url')
                     ->searchable(),
@@ -47,6 +48,19 @@ class RoleplaysTable
                     ->sortable(),
                 TextColumn::make('status.name')
                     ->searchable(),
+                TextColumn::make('last_post_at')
+                    ->label('Dernier message')
+                    ->formatStateUsing(fn (?Carbon $state) => $state?->diffForHumans() ?? '—')
+                    ->sortable(),
+                TextColumn::make('last_post_author')
+                    ->label('Auteur du dernier message')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('last_synced_at')
+                    ->label('Dernière synchro')
+                    ->formatStateUsing(fn (?Carbon $state) => $state?->diffForHumans() ?? 'Jamais')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
