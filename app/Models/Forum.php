@@ -11,7 +11,7 @@ class Forum extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['name', 'alt', 'button', 'nsfw'];
+    protected $fillable = ['name', 'alt', 'button', 'nsfw', 'type'];
 
     protected $casts = [
         'nsfw' => 'boolean',

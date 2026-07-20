@@ -12,7 +12,9 @@ class RoleplayStatusSeeder extends Seeder
         $statuses = [
             ['name' => 'En cours'],
             ['name' => 'Archivé'],
-
+            ['name' => 'Terminé'],
+            ['name' => 'Ouvert'],
+            ['name' => 'En pause'],
         ];
 
         foreach ($statuses as $status) {

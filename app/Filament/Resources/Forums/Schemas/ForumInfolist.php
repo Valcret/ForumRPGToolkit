@@ -15,6 +15,8 @@ class ForumInfolist
                 TextEntry::make('name'),
                 TextEntry::make('alt')
                     ->placeholder('-'),
+                TextEntry::make('type')
+                    ->badge(),
                 IconEntry::make('nsfw')
                     ->boolean(),
             ]);

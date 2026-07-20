@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Forums\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
@@ -15,6 +16,12 @@ class ForumForm
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('alt'),
+                Select::make('type')
+                    ->options([
+                        'phpbb' => 'phpBB',
+                        'forumactif' => 'Forumactif',
+                    ])
+                    ->required(),
                 Toggle::make('nsfw')
                     ->required(),
             ]);

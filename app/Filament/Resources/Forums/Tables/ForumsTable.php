@@ -20,6 +20,14 @@ class ForumsTable
                     ->searchable(),
                 TextColumn::make('alt')
                     ->searchable(),
+                TextColumn::make('type')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'phpbb' => 'info',
+                        'forumactif' => 'warning',
+                        default => 'gray',
+                    })
+                    ->searchable(),
                 IconColumn::make('nsfw')
                     ->boolean(),
             ])
