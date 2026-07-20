@@ -1,0 +1,2242 @@
+/*===================================================
+ROOT
+===================================================*/
+
+:root {
+    --color1: #333333;
+    --color2: #897f99;
+    --color3: #9d93ad;
+    --color4: #d6cfe2;
+    --color5: #9993a3;
+    --color6: #fff;
+    --color7: #8312f4;
+    --color8: #897f9982;
+    --font1: 'Montserrat';
+    --font2: 'Bebas Neue';
+    --backgroundbutton: var(--color1);
+    --textbutt: #fff;
+    --font-size: 18px;
+    --duration: .44s;
+    --move-hover: -4px;
+    --font-shadow: var(--font-size);
+}
+
+
+/*===================================================
+ANIMATION
+===================================================*/
+
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes jello-horizontal {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+/*===================================================
+COULEUR ET SURLIGNAGE DU TEXTE
+===================================================*/
+
+
+/* pour Firefox */
+
+::-moz-selection {
+    background-color: var(--color7);
+    color: var(--color6);
+}
+
+
+/* pour Safari et Chrome */
+
+::selection {
+    background-color: var(--color7);
+    color: var(--color6);
+}
+
+
+/*===================================================
+GENERAL
+===================================================*/
+
+body {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--color4);
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    position: relative;
+    font-family: var(--font1);
+    overflow: hidden;
+    height: 100vh;
+}
+
+a, a:hover,a:active,a:focus{
+    text-decoration: none !important;
+    color: var(--color5);
+}
+
+a {
+    color: var(--color6);
+}
+
+/*===================================================
+fOOTER
+===================================================*/
+
+
+/*footer*/
+
+footer
+    /*GENERAL*/
+
+{
+    background: var(--color2);
+    display: flex !important;
+    flex-direction: column;
+    padding: 10px 80px;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    height: 16vh;
+    box-sizing: border-box;
+}
+
+.firstzonefooter
+    /*HAUT DU FOOTER*/
+
+{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color6);
+}
+
+.firstzonefooter img {
+    width: 10vh;
+}
+
+.secondzonefooter
+    /*BASDUFOOTER*/
+
+{
+    width: 100%;
+    display: inline-flex!important;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+button.footer
+    /*APPARENCE BOUTONS*/
+
+{
+    display: flex;
+    background: none;
+    border: none;
+}
+
+button.footer a
+    /*APPARENCE BOUTONS*/
+
+{
+    background: var(--color1);
+    width: 300px;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    padding: 2px;
+    Color: var(--color6);
+}
+
+button.footer:hover
+    /*APPARENCE BOUTONS SURVOL*/
+
+{
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+
+/*===================================================
+ACCUEIL - PAGES
+===================================================*/
+
+.bodyarrived
+    /*corpsdelapagedarrivee*/
+
+{
+    display: flex;
+    height: 84vh;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+
+/*navigation*/
+
+.accueilnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 30vh;
+    text-align: center;
+    background: var(--color4);
+}
+
+a.homemenu img
+    /*image du menu*/
+
+{
+    width: 20vh;
+    padding: 40px;
+}
+
+a.logo img {
+    width: 100%;
+}
+
+a.logo img:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+
+/*effet au survol*/
+
+a.homemenu img:hover,
+.firstzonefooter img:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+
+/*zone de droite accueil*/
+
+.home {
+    width: 100%;
+    text-align: center;
+    background: var(--color1);
+}
+
+.home img {
+    width: 50vh;
+    text-align: center;
+}
+
+
+/*texte general*/
+
+.home p {
+    color: var(--color6);
+    font-family: var(--font1);
+    font-size: 1rem;
+    width: 60%;
+    margin: auto;
+    line-height: 1.9rem;
+    padding-bottom: 2vh;
+}
+
+
+/*texte em*/
+
+.home p em {
+    color: var(--color4);
+    font-weight: 800;
+}
+
+
+/*===================================================
+TRIEUR RP
+===================================================*/
+
+
+/*GENERAL*/
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background: var(--color4);
+}
+
+#wrapper {
+    position: relative;
+}
+
+.left {
+    position: relative;
+    left: 75px;
+}
+
+div#content,
+div#wrapper {
+    background-color: var(--color4);
+}
+
+.connectmenu
+    /*menudeconnection*/
+
+{
+    border-top: 1px solid var(--color4);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.connectmenu a
+    /*MENULIEN*/
+
+{
+    color: var(--color4);
+}
+
+.connectmenu a:hover
+    /*MENUHOVER*/
+
+{
+    color: var(--color2);
+}
+
+.navbar
+    /*bOUTONX*/
+
+{
+    padding: .2rem!important;
+}
+
+i.bi.bi-x-lg
+    /*ICON*/
+
+{
+    color: var(--color4);
+}
+
+nav
+    /*NAVX*/
+
+{
+    width: 5vh;
+    height: 5vh;
+    padding: 0rem;
+    background: var(--color1);
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl
+    /*ZONEDUTRIEUR*/
+
+{
+    width: auto !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+#sidebar-wrapper
+    /*MENULATERAL*/
+
+{
+    position: fixed;
+    min-height: 100%;
+    margin-left: -15rem;
+    transition: all 0.25s ease-out;
+    background: var(--color1);
+    width: 75px;
+    z-index: 10;
+    padding-left: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-wrapper .sidebar-heading
+    /*MENULATERAL*/
+
+{
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 100%;
+}
+
+#page-content-wrapper {
+    width: 100vw;
+    margin-left: 4rem;
+    max-height: 84vh;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.active
+    /*ACTIVEONGLE*/
+
+{
+    position: relative;
+    background: var(--color2);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    box-shadow: -3px 0px 3px 0px var(--color2);
+}
+
+
+/*barre visuel des icons*/
+
+.nav .nav-item {
+    margin: 3px 0;
+}
+
+.nav .nav-item>a {
+    background: transparent;
+    color: var(--color2);
+    border-radius: 50% !important;
+    height: 60px;
+    width: 60px;
+    margin: 7px;
+}
+
+.nav .nav-item.active>a {
+    background: var(--color4);
+    border-radius: 50% !important;
+    margin: 7px;
+    padding: 0px 0px;
+}
+
+.nav .nav-item.active::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: var(--color1);
+    right: 5px;
+    top: -30px;
+    border-bottom-right-radius: 50%;
+    box-shadow: 7px 3px 0px 0px var(--color2);
+}
+
+a.nav-link.text-dark.py-2.rounded-,
+a.nav-link.text-dark.py-2 {
+    color: var(--color2)!important;
+}
+
+.nav .nav-item.active::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    right: 5px;
+    bottom: -30px;
+    border-top-right-radius: 50%;
+    box-shadow: 7px -3px 0px 0px var(--color2);
+}
+
+section
+    /*section*/
+
+{
+    min-height: 50rem;
+    overflow: hidden;
+    height: 84vh;
+}
+
+
+/*ongleaccueiltrieur*/
+
+
+/*toolki +paragraphe du haut*/
+
+img.trieurtoolki {
+    width: 20vh;
+    padding-bottom: 5vh;
+}
+
+.homesectiontrieur {
+    text-align: center;
+}
+
+
+/*titre h1 accueil*/
+
+.homesectiontrieur h1 {
+    font-family: var(--font2);
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--color1);
+}
+
+
+/*em accueil*/
+
+.homesectiontrieur em {
+    color: var(--color2);
+    font-weight: 600;
+}
+
+
+/*haut accueil*/
+
+.trieurintrotop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+/*zone des carrés*/
+
+.invitetrieurzone1,
+.connectetrieur1
+    /* s'enregistrer, se connecter*/
+
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3vh 0vh;
+    flex-wrap: wrap;
+}
+
+.inviteenregistre,
+.inviteconnect
+    /* s'enregistrer, se connecter*/
+
+{
+    border: 2px solid var(--color6);
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: space-evenly;
+    font-style: italic;
+}
+
+
+/*les icones*/
+
+i.bi.bi-person-up,
+i.bi.bi-door-open,
+i.bi-bookmark-plus,
+i.bi.bi-list-check,
+i.bi.bi-person-lines-fill,
+i.bi.bi-pc-display-horizontal,
+i.bi.bi-question-circle {
+    font-size: 5rem;
+}
+
+.inviteenregistre a,
+.inviteconnect a,
+.gererrp a {
+    color: var(--color2);
+}
+
+.inviteenregistre a:hover,
+.inviteconnect a:hover,
+.gererrp a:hover {
+    color: var(--color1);
+}
+
+.gererrp:hover,
+.inviteenregistre:hover,
+.inviteconnect:hover {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+
+/*zone de gestions rp raccourcis*/
+
+.gererrp {
+    border: 2px solid var(--color6);
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    justify-content: space-evenly;
+    font-style: italic;
+}
+
+
+/*onglets rps, forums, perso*/
+
+.ongledajout {
+    background: var(--color1);
+    color: var(--color6);
+    width: 80%;
+    height: auto;
+    position: relative;
+    margin: 20px auto 0;
+    padding-bottom: 0;
+}
+
+.container {
+    position: relative;
+    width: 660px;
+    height: 300px;
+    background: #f1f1f1;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container-onglets {
+    background: var(--color3);
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.onglets {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/*contenu des onglets*/
+
+.contenu {
+    display: none;
+    height: 48vh;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+}
+.ongledajout .contenu {
+    max-height: 48vh;
+    width: 100%;
+}
+
+.contenu h3 {
+    padding: 20px;
+    font-family: var(--font2);
+    color: var(--color4);
+}
+
+.contenu p {
+    padding: 20px;
+}
+
+
+.contenu p.placeholder-text {
+    padding: 5px;
+    margin:0;
+}
+
+/* Animation des onglets */
+
+.onglets.active {
+    background: var(--color1);
+    color: var(--color6);
+    border-radius: 0 !important;
+    box-shadow: 0px 0px 3px 0px var(--color1);
+}
+
+.active-contenu {
+    display: block;
+    animation: fade 0.5s forwards;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*formulaires dans les onglets*/
+
+
+/*general*/
+
+form.formulairetype {
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
+
+/*boutoncommun*/
+
+button.buttonformtype {
+    padding: 10px 40px;
+    font-family: var(--font2);
+    font-weight: 800;
+    background: var(--color5);
+    border: none;
+}
+
+button.buttonformtype:hover {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+
+/*formulairerp*/
+
+.formstyletop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+.formstyleoption {
+    width: 90%;
+}
+
+select#forum_id,
+select#character_id {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+}
+
+.formstylemiddle {
+    margin-bottom: 20px;
+}
+
+input#text1 {
+    padding: 10px;
+    width: 95%;
+    text-align: center;
+    margin: auto;
+    font-style: italic;
+}
+
+input.text2,
+input.text3 {
+    width: 80%;
+    padding: 10px;
+}
+
+.formstyletxt1 {
+    margin: 0 auto 2vh;
+    width: 95%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*formulaireforum*/
+
+input#forumname,
+input#url,
+input#buttonlink,
+input#charactername,
+input#characterurl {
+    width: 60%;
+    padding: 10px;
+}
+
+.formstyletexte {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+input#forumname,
+input#indexlink,
+input#button,
+input#alt,
+select#user_id,
+input#charactername,
+input#characterurl {
+    padding: 10px;
+    width: 65%;
+}
+
+
+/*formulairepersonnage*/
+
+.formstyleperso {
+    margin-bottom: 2vh;
+}
+
+.formstylecenter {
+    width: 90%;
+    margin: auto;
+}
+
+.formstyletxt {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    align-items: center;
+}
+
+.formstyleperso {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+select#userselect {
+    width: 60%;
+    padding: 10px;
+}
+
+
+/*exemple de liste visuel rp*/
+
+.exempleliste {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2vh;
+    position: relative;
+}
+
+.article1
+    /*la zone pour un rp*/
+
+{
+    background: var(--color6);
+    color: var(--color1);
+    height: 10vh;
+    width: 100%;
+    /* display: flex; */
+    margin: 1vh;
+    position: relative;
+}
+
+
+/*les icones*/
+
+.iconexemple {
+    width: 10%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+a.exempleicone {
+    color: var(--color1);
+}
+
+a.exempleicone:hover {
+    color: var(--color6);
+}
+
+
+/*barre icone et nom du forum*/
+
+.article1haut {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color4);
+    padding: 2px;
+    height: 30%;
+}
+
+.article1haut .icons {
+    margin-left: .25rem;
+}
+
+.article1haut .icons a{
+    margin-left: .25rem;
+    margin-right: .25rem;
+}
+.fofoarticle {
+    padding-right: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color1);
+}
+
+
+/*zone chiffre, dates, url du lien, participants*/
+
+.article1bas {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    height: 70%;
+}
+
+.article1gauche
+    /*chiffre et date*/
+
+{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exemplechiffre {
+    background: var(--color1);
+    padding: 10px;
+    color: var(--color6);
+    border-radius: 100px;
+    height: 70%;
+}
+
+.article1droite
+    /*rps et participants*/
+
+{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    text-align: right;
+}
+
+.article1droite h3,
+.article1droitemilieu {
+    margin: 0;
+    padding: 0 10px 0px;
+}
+
+.article1droite h3 a {
+    color: var(--color1);
+    font-family: var(--font1);
+    font-size: 1rem;
+    margin: 0px;
+    line-height: 0px;
+}
+
+.article1droite h3 a:hover,
+.article1droitemilieu a:hover {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+.article1droitemilieu a {
+    color: var(--color1);
+}
+
+.article1droitebas {
+    font-style: italic;
+    font-size: 12px;
+}
+
+
+/*Onglet trieur personnage*/
+
+.trieurpersonnagezone
+    /*zonegénérale*/
+
+{
+    width: 90%;
+    margin: 0 auto 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: auto;
+    justify-content: space-around;
+    position: relative;
+    max-height: 51.5vh;
+    overflow-y: auto;
+}
+
+.forumpersonnage
+    /*leforum et les personnages liés*/
+
+{
+    background: var(--color1);
+    color: var(--color6);
+    padding: 10px;
+    width: 28%;
+    margin: 5px;
+    height: 50vh;
+}
+
+.forumpersonnage h3
+    /*titre forum*/
+
+{
+    text-align: center;
+    font-family: var(--font2);
+    border-bottom: 1px solid;
+    line-height: 50px;
+}
+
+.personnageduforum
+    /*liste perso du fofo*/
+
+{
+    height: 85%;
+    overflow: auto;
+}
+
+.name
+    /*nom du perso*/
+
+{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.name h4
+    /*nom du perso*/
+
+{
+    font-size: 1.1rem;
+    font-weight: normal;
+    width: 80%;
+}
+
+.iconmodoperso
+    /*icone moderation*/
+
+{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconmodoperso a
+    /*icone moderation*/
+
+{
+    color: var(--color2)
+}
+
+.iconmodoperso a:hover
+    /*icone moderation*/
+
+{
+    color: var(--colorcolor6)
+}
+
+
+/*Onglet forum liste*/
+
+.entetefofo img
+    /*image du forum*/
+
+{
+    width: 20%;
+}
+
+.listeforum
+    /*liste des forums*/
+
+{
+    width: 15%;
+    background-color: var(--color1);
+    margin: 1vh;
+    color: var(--color6);
+}
+
+.entetefofo h3
+    /*titre nom du forum*/
+
+{
+    font-size: 1rem;
+}
+
+.entetefofo
+    /*haut de la liste*/
+
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.listefofo {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.iconmodofofo
+    /*icone*/
+
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.iconmodofofo a {
+    color: var(--color5);
+}
+
+.iconmodofofo a:hover {
+    color: var(--color6);
+}
+
+
+/*page FAQ/Aides /*
+/*accordeon*/
+
+.accordion {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-section {
+    border-bottom: 1px solid var(--color1);
+}
+
+.accordion-section:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: var(--color6);
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color1);
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--color3);
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    color: var(--color6);
+    background-color: var(--color5);
+}
+
+.accordion-content p {
+    margin: 0;
+}
+
+.active .accordion-content {
+    display: block;
+}
+
+
+/*===================================================
+PAGES CONNECTIONS INSCRIPTIONS
+===================================================*/
+
+
+/*CORPS PAGES*/
+
+.bodyconnect {
+    background: var(--color4);
+    display: flex;
+    height: 84vh;
+    overflow: auto;
+    flex-direction: column;
+}
+
+
+/*MENU NAVIGATION*/
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    width: 100px;
+    background: var(--color1);
+    text-align: center;
+}
+
+.menu img {
+    width: 80px;
+}
+
+.menu img:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+.connectiontxt {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.connectiontxt img {
+    width: 10%;
+}
+
+
+/*fomulaire de connexion/enregistrement*/
+
+form#regForm,
+form.loginAndRegister {
+    width: 50%;
+    margin: 30px auto;
+    background: var(--color1);
+    padding: 20px;
+    color: var(--color6);
+}
+
+.formreggrpe {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+input#username,
+input#email,
+input#password,
+input#confirmPassword,
+input#name,
+select#subject,
+textarea#message {
+    width: 75%;
+    padding: 10px;
+}
+
+.formreggrpe.forgotmp {
+    justify-content: center;
+}
+
+.formreggrpe.forgotmp a {
+    color: var(--color6)!important;
+}
+
+.formreggrpe.forgotmp a:hover {
+    color: var(--color4);
+    text-decoration: none;
+}
+
+
+/*===================================================
+PAGES DU FOOTER EN GENERAL
+===================================================*/
+
+.pagebasique {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.pagebasique img {
+    width: 200px;
+}
+
+.boutonpartenaire {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.boutonpartenaireimg {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+a.partenaireimg img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+
+/*===================================================
+FICHECRAFT
+===================================================*/
+
+
+/*CORPS*/
+
+body.fichecraftbody {
+    background: var(--color4);
+    overflow: hidden;
+}
+
+
+/*menu lateral*/
+
+aside.menufichecraft img {
+    width: 50%;
+}
+
+aside.menufichecraft img:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+main.fichecraft {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside.menufichecraft {
+    width: 15%;
+    background: var(--color1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: var(--color6);
+}
+
+
+/*bouton pour ferme*/
+
+aside.menufichecraft .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color6)
+}
+
+
+/*bouton ouvert*/
+
+.open-btn {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+/*bouton des fofos*/
+
+button.fc {
+    display: flex;
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+button.fc a {
+    background: var(--color2);
+    width: 100%;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    padding: 2px;
+    Color: var(--color6);
+}
+
+button.fc:hover {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+
+/*liste des boutons*/
+
+.forumficheliste {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    position: relative;
+}
+
+
+/*section fichecraft*/
+
+section.fichcraftmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ficheintro
+    /*zone avec toolki*/
+
+{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.formfichearemplir
+    /*zone fiche*/
+
+{
+    height: 60vh;
+    overflow: auto;
+}
+
+
+/*formulairetypefichecraft*/
+
+form.fichecrafttype {
+    background: var(--color1);
+    padding: 10px;
+    color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+}
+
+.fichetypediv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+form.fichecrafttype h2 {
+    font-family: var(--font2);
+    color: var(--color3);
+    font-size: 3rem;
+}
+
+form.fichecrafttype hr {
+    border: 1px solid var(--color4);
+    width: 100%;
+}
+
+.fichetypediv input,
+.fichetypediv select {
+    width: 60%;
+    padding: 10px;
+}
+
+.fichetypediv textarea {
+    width: 60%;
+    padding: 10px;
+    height: 300px;
+}
+
+
+/*===================================================
+FACELAIM
+===================================================*/
+
+
+/*ZONE ADMIN POUR SE CO*/
+
+.adminconnect a {
+    color: var(--color4);
+}
+
+.adminconnect a:hover {
+    color: var(--color6);
+}
+
+
+/*FILTRE FACELAIM*/
+
+.filterfacelaim {
+    height: 71%;
+    overflow: auto;
+}
+
+
+/*BOUTON DE FILTRES*/
+
+.buttonfilter {
+    display: flex;
+    margin: 10px 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+button.filter {
+    display: flex;
+    background: none;
+    border: none;
+    width: 100%;
+}
+
+button.filter a {
+    background: var(--color2);
+    width: 100%;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    padding: 2px;
+    Color: var(--color6);
+}
+
+button.filter:hover {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+
+/*LES FILTRES*/
+
+.filterzone {
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+/*FILTRES TITRES*/
+
+.filterzone span {
+    font-family: var(--font2);
+    letter-spacing: 2px;
+    color: var(--color6);
+}
+
+
+/*BORDURES SOUS TITRES*/
+
+.filterzone hr {
+    border-top: 1px solid var(--color4);
+    margin: 5px 5px 5px 0;
+}
+
+
+/*LISTE FILTRE*/
+
+.filterzone ul li {
+    list-style: none;
+}
+
+.filterzone ul {
+    padding-left: 20px;
+}
+
+
+/*INPUT STYLE*/
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=checkbox] {
+    -border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    background: var(--color1);
+    border: 1px solid var(--color4);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--color3);
+    margin: 0px;
+    position: relative;
+    &:before {
+        font-family: FontAwesome;
+        content: '\f00c';
+        display: block;
+        color: var(--color1);
+        font-size: 13px;
+        position: absolute;
+    }
+}
+
+
+/*ZONE DE DROITE*/
+
+section.facelaim {
+    height: 80vh;
+    position: relative;
+    width: 90%;
+}
+
+
+/*TEXTE INTRO AVEC TOOLKI*/
+
+.facelaimintro {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*ZONE DES VAVAS*/
+
+.avatarfacelaim {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.avatarfacelaim a {
+    position: relative;
+    margin: 10px;
+}
+
+.avatarfacelaim img {
+    width: 100px;
+    height: 250px;
+    display: block;
+    object-fit: cover;
+}
+
+.avatarfacelaim a:hover .info {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*INFOS AU HOVER*/
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color8);
+    color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    text-align: center;
+}
+
+
+/*===================================================
+RESPONSIVE DE TOUT
+===================================================*/
+
+@media screen and (max-width: 1475px) {
+    .connectetrieur1 {
+        padding: 2vh;
+    }
+    .gererrp {
+        width: 18%;
+    }
+    i.bi.bi-person-up,
+    i.bi.bi-door-open,
+    i.bi-bookmark-plus,
+    i.bi.bi-list-check,
+    i.bi.bi-person-lines-fill,
+    i.bi.bi-pc-display-horizontal,
+    i.bi.bi-question-circle {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 901PX) {
+    .connectetrieur1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gererrp {
+        width: 100%;
+        margin: 5px auto;
+    }
+    .inviteenregistre,
+    .inviteconnect {
+        width: 45%;
+    }
+    .fichetypediv {
+        flex-direction: column;
+    }
+    .fichetypediv input,
+    .fichetypediv select,
+    .fichetypediv textarea {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767PX) {
+    .bodyarrived {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    footer {
+        padding: 18px 20px;
+    }
+    .home img {
+        width: 50%;
+    }
+    .home p {
+        width: 90%;
+    }
+    .accueilnav {
+        width: 100%;
+        flex-direction: row;
+    }
+    a.homemenu img {
+        width: 60%;
+        padding: 10px;
+    }
+    .secondzonefooter {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .firstzonefooter {
+        width: 100%;
+        text-align: center;
+    }
+    .invitetrieurzone1 {
+        flex-direction: column;
+    }
+    .inviteenregistre,
+    .inviteconnect {
+        width: auto!important;
+        margin: 2vh!important;
+    }
+    .formstyletexte {
+        flex-direction: column;
+    }
+    aside.menufichecraft {
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+    aside.menufichecraft.open {
+        transform: translateX(0);
+    }
+    .open-btn {
+        display: block;
+    }
+    section.fichcraftmain {
+        width: 100%;
+    }
+    section.facelaim {
+        width: 100%;
+    }
+    .facelaimintro {
+        width: 90%;
+        text-align: center;
+    }
+    .avatarfacelaim {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    aside.menufichecraft {
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+    aside.menufichecraft.open {
+        transform: translateX(0);
+    }
+    .open-btn {
+        display: block;
+    }
+    section.fichcraftmain {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    aside.menufichecraft {
+        width: 15%;
+        height: 86vh;
+        position: relative;
+        transform: translateX(0);
+        z-index: 1;
+    }
+    aside.menufichecraft.closed {
+        width: 0;
+        overflow: hidden;
+    }
+    .open-btn {
+        display: none;
+    }
+    .menufichecraft.closed+.open-btn {
+        display: block;
+    }
+    section.fichcraftmain {
+        width: 90%;
+        transition: margin-left 0.3s ease;
+    }
+    .menufichecraft.closed+section.fichcraftmain {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #page-content-wrapper {
+        margin-left: 0.5rem;
+    }
+    .ongledajout {
+        width: 90%;
+    }
+    .trieurintrotop {
+        flex-direction: column-reverse;
+    }
+    form.formulairetype {
+        width: 90%;
+    }
+    .ongledajout,
+    .contenu {
+        height: auto;
+        padding-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+    }
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .trieurpersonnagezone {
+        flex-direction: column;
+    }
+    .forumpersonnage {
+        width: 100%;
+    }
+    .listeforum {
+        width: 100%;
+    }
+    .onglets {
+        font-size: 1rem;
+    }
+    input#forumname,
+    input#indexlink,
+    input#buttonlink,
+    input#charactername,
+    input#characterurl {
+        padding: 10px;
+        width: 100%;
+    }
+    .formstyleperso {
+        flex-direction: column;
+        align-items: center;
+    }
+    select#userselect {
+        width: 100%!important;
+        padding: 10px;
+    }
+    .menu {
+        width: auto;
+    }
+    .connectiontxt {
+        margin-top: 100px;
+    }
+    form#regForm,
+    form.loginAndRegister {
+        width: 90%;
+    }
+    .menu img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    button.footer a {
+        width: 220px;
+    }
+    .connectiontxt {
+        margin: 100px auto;
+    }
+}
+
+@media (max-width: 516px) {
+    .trieurintrotop {
+        flex-direction: column-reverse;
+    }
+    .formstyletop {
+        flex-direction: column;
+    }
+    .formstyleoption {
+        width: 100%;
+    }
+    select#dropdown1,
+    select#dropdown2 {
+        width: 95%;
+        margin: 10px 0px;
+    }
+    .formstyletxt1 {
+        flex-direction: column;
+    }
+    input.text2,
+    input.text3 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .article1 {
+        height: auto;
+    }
+    .article1haut {
+        flex-direction: column;
+        height: 30%;
+        align-items: center;
+    }
+    .iconexemple {
+        width: 90%;
+    }
+    .article1bas {
+        flex-direction: column;
+        align-items: center;
+    }
+    .article1gauche {
+        width: 100%;
+        margin: 10px;
+    }
+    .article1droite {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+/*MODALE FACELAIM*/
+[x-cloak] { display: none !important; }
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--color8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--color1) !important;
+    color: var(--color6);
+    padding: 30px;
+    width: 50%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-content img {
+    max-height: 60vh;
+    object-fit: contain;
+    width: 100%;
+}
+
+.modal-content p {
+    font-family: var(--font2);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--color4);
+    margin: 0;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color6);
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--color4);
+}
+
+.modal-download {
+    display: flex;
+    background: none;
+    border: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.modal-download span {
+    background: var(--color2);
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    color: var(--color6);
+    cursor: pointer;
+    font-family: var(--font1);
+    letter-spacing: 1px;
+}
+
+.modal-download:hover {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+}
+
+/*RESPONSIVE MODALE*/
+
+@media (max-width: 767px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+#avatarCheck {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions .modal-download {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+}
+.modal-auth-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 90%
+}
+.connectiontxt>img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sidebar fermée → bouton décalé */
+#sidebarToggle.close {
+    left: 10px;
+}
+
+/* Navbar : état par défaut (sidebar ouverte) */
+.navbar.position-fixed {
+    left: 75px;
+    top: 0;
+    transition: left 0.3s ease;
+}
+
+/* Navbar : sidebar fermée */
+body.sb-sidenav-toggled .navbar.position-fixed {
+    left: 0;
+    top: 0;
+    background: transparent !important;
+}
+.modal-content .rp-list .article1 {
+        width: 95%;
+}
+.modal-content .rp-list {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+.modal-content.modal-rp-list {
+    width: 70%;
+}
+.forumpersonnage.archived-section {
+    width:70%
+}
+.forumpersonnage.archived-section .name h4 {
+    width: 40%;
+}
+.forumpersonnage.archived-section .name h4 {
+    width: 25%;
+    text-align: start;
+}
+.forumpersonnage.archived-section .name .forum-label {
+    width: 30%;
+    text-align: start;
+}
+.forumpersonnage.archived-section .name .iconmodoperso {
+    justify-content: flex-end;
+}
+.forumpersonnage.archived-section .name .iconmodoperso a {
+    margin-left : .25rem;
+    margin-right : .25rem;
+}
+.modal-content .rp-list .article1droitebas {
+    margin-left: 0.5rem
+}
+.modal-content.modal-rp-list.perso-list .forumpersonnage {
+    width: 75%;
+}
+.container-fluid.faq-list {
+    height: 51.5vh;
+    overflow-y: auto;
+}
+/* MENTIONS LÉGALES - ajustement dans bodyconnect sans menu */
+.bodyconnect .connectiontxt h1 {
+    font-family: var(--font2);
+    font-size: 2.5rem;
+    color: var(--color1);
+    margin: 20px 0;
+}
+
+.bodyconnect .connectiontxt h2 {
+    font-family: var(--font2);
+    font-size: 1.5rem;
+    color: var(--color2);
+    margin: 20px 0 10px;
+    text-align: left;
+}
+
+.bodyconnect .pagebasique {
+    text-align: left;
+    background: var(--color1);
+    color: var(--color6);
+    padding: 30px 40px;
+    width: 60%;
+    margin: 0 auto 40px;
+}
+
+.bodyconnect .pagebasique p,
+.bodyconnect .pagebasique li {
+    line-height: 1.8;
+}
+
+.bodyconnect .pagebasique ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.bodyconnect .pagebasique a {
+    color: var(--color4);
+}
+
+.bodyconnect .pagebasique a:hover {
+    color: var(--color3);
+}
+
+.bodyconnect .pagebasique strong {
+    color: var(--color4);
+}
+
+.bodyconnect .pagebasique em {
+    color: var(--color3);
+}
