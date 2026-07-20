@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('forums', function (Blueprint $table) {
-            //
+            $table->enum('type', ['phpbb', 'forumactif'])->default('phpbb')->after('name');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('forums', function (Blueprint $table) {
-            //
+            $table->dropColumn('type');
         });
     }
 };

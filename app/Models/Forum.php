@@ -11,10 +11,14 @@ class Forum extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['name', 'alt', 'button', 'nsfw', 'type'];
+    protected $fillable = [
+        'name', 'alt', 'button', 'nsfw', 'type',
+        'db_host', 'db_port', 'db_database', 'db_username', 'db_password', 'table_prefix',
+    ];
 
     protected $casts = [
         'nsfw' => 'boolean',
+        'db_password' => 'encrypted',
     ];
 
     public function tags(): BelongsToMany
